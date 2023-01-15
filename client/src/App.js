@@ -7,11 +7,39 @@ import Product from './pages/Product/Product';
 import Products from './pages/Products/Products';
 
 function App() {
-  const router = createBrowserRouter([]);
+  const Layout = () => {
+    return (
+      <div className='app'>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </div>
+    );
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          path: '/',
+          element: <Home />
+        },
+        {
+          path: '/products/:id',
+          element: <Products />
+        },
+        {
+          path: '/product/:id',
+          element: <Product />
+        }
+      ]
+    }
+  ]);
 
   return (
     <div>
-      <h1>App</h1>
       <RouterProvider router={router} />
     </div>
   );
