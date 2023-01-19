@@ -1,0 +1,41 @@
+.slider {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: relative; // for .icons
+  overflow: hidden;
+
+  .container {
+    width: 300vw; // have 3 images
+    height: 100%; // wegen img 100 %
+    display: flex; //horizontel
+    transition: all 1s ease; //animation
+
+    img {
+      width: 100vw; // ohne das kommt overflow
+      height: 100%; // wenn hier prozent , dann paraent auch %
+      object-fit: cover; // cover all componet
+    }
+  }
+
+  .icons {
+    width: fit-content;
+    display: flex;
+    position: absolute; // see .slider
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    gap: 10px;
+    margin: auto;
+
+    .icon {
+      // border
+      width: 50px;
+      height: 50px;
+      border: 1px solid #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}
