@@ -3,7 +3,7 @@ import './Card.scss';
 
 
 const Card = ({ item }) => {
-    console.log(item);
+    //console.log(item);
     return (
         <Link className="link" to={`/product/${item.id}`}>
             <div className="card">
