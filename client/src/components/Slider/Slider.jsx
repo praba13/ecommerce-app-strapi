@@ -3,13 +3,26 @@ import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
 import "./Slider.scss";
 
+import Bild1 from '../../assets/home-pic/bild1.jpg';
+import Bild2 from '../../assets/home-pic/bild2.jpg';
+import Bild3 from '../../assets/home-pic/pic3.jpg';
+//import Bild4 from '../../assets/home-pic/bild3.jpg';
+
 const Slider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
+    /*
     const data = [
         "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",
         "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    ];
+    */
+
+    const data = [
+        Bild1,
+        Bild2,
+        Bild3
     ];
 
     const prevSlide = () => {
