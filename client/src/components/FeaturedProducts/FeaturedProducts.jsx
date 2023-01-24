@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const FeaturedProducts = ({ type }) => {
 
+    /*
     const data = [
         {
             id: 1,
@@ -41,15 +42,17 @@ const FeaturedProducts = ({ type }) => {
         }
     ];
 
-    const [products, setProducts] = useState([]);
+    */
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await axios.get(process.env.REACT_APP_API_URL + "/products", {
+                const res = await axios.get(process.env.REACT_APP_API_URL + `/products?populate=*&[filters][type][$eq]=${type}`, {
                     headers: { Authorization: "bearer " + process.env.REACT_APP_API_TOKEN }
                 });
-                console.log(data);
+                setData(res.data.data);
+                console.log(res);
             } catch (err) {
                 console.log(err);
             }
