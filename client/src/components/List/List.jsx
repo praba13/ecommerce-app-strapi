@@ -4,7 +4,9 @@ import './List.scss';
 const List = ({ subCats, maxPrice, sort, catId }) => {
 
     const { data, loading, error } = useFetch(
-        `/products?populate=*&[filters][categories][id]=${catId}`
+        `/products?populate=*&[filters][categories][id]=${catId}${subCats.map(
+            (item) => `&[filters][sub_categories][id][$eq]=${item}`
+        )}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
     );
 
     /*
@@ -53,4 +55,4 @@ const List = ({ subCats, maxPrice, sort, catId }) => {
     );
 };
 
-export default List;
+export default List;;;;;
