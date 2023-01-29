@@ -13,7 +13,7 @@ const Product = () => {
     const [quantity, setQuantity] = useState(1);
 
 
-    const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+    const { data, loading } = useFetch(`/products/${id}?populate=*`);
     console.log(data);
     return (
         <div className='product'>
